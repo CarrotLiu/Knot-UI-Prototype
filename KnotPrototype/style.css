@@ -1,0 +1,117 @@
+body {
+    margin: 15px;
+    padding: 20px;
+    background-color:#FAF8ED;
+    color: #363534;
+    font: 16px "HYJiangNanKaiSong", Helvetica, Arial, sans-serif;
+}
+
+.title{
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #363534;
+    font: 30px "HYJiangNanKaiSong", Helvetica, Arial, sans-serif;
+}
+
+.friend-block{
+    padding: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+
+}
+
+.login-block{
+    margin: auto;
+    margin-top: 230px;
+    margin-bottom: 30px;
+    height: 90%;
+    padding: 0px;
+    padding-top: 10px;
+    background: #748E63;
+}
+
+input {
+    width: 100%;
+    font: 18px "HYJiangNanKaiSong", Helvetica, Arial, sans-serif;
+    text-align: center;
+    display: block;
+    padding: 15px 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: #d9e1cf;
+    box-sizing: border-box;
+}
+
+input:focus {
+    outline: none;
+}
+input:focus::placeholder {
+    color: transparent;
+}
+
+.loginLabel{
+	margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: block;
+    color: #FAF8ED;
+    font-size: 25px;
+}
+
+.orange-btn{
+    display:block;
+    color: #363534;
+    margin: auto;
+    height: 135px;
+    width: 135px;
+    background-color: #F9B572;
+    border-radius: 50%;
+    border: transparent;
+    font: 25px "HYJiangNanKaiSong", Helvetica, Arial, sans-serif;
+}
+
+.friend-btn{
+    align-items: center;
+    background-color: #748E63;
+    box-sizing: border-box;
+    margin: 0 auto;
+    color: #FAF8ED;
+    cursor: pointer;
+    flex: 0 0 auto;
+    width: 150px;
+    height: 80px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    border: transparent;
+}
+
+.btn-block{
+    margin:auto;
+    padding: 10px;
+}
+
+
+.btn_container{
+    align-items: center;
+    display: grid;
+    padding: 0px;
+    margin:0px auto;
+    height: 30%;
+    
+}
+
+.orange-btn:hover {
+    background-color: #C3473D;
+    color: #FAF8ED;
+}
+
+
+#cnv-container{
+
+}
