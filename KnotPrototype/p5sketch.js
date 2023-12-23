@@ -1,8 +1,10 @@
+let mic , vol, h;
 let logoEN, logoCN;
 let knot, noKnot, halfKnot;
 let ifLgnPage = false, 
     ifAcvPage = false,
     ifRcdPage = false;
+    ifVocPage = false;
 let acvPageId;
 let pgNames = [
   "lj",
@@ -45,16 +47,29 @@ function setup() {
       ifLgnPage = true;
       ifAcvPage = false;
       ifRcdPage = false;
+      ifVocPage = false;
     } else if(document.title == pgNames[i]){
       ifLgnPage = false;
       ifAcvPage = true;
       ifRcdPage = false;
+      ifVocPage = false;
     } else if(document.title == "record"){
       ifLgnPage = false;
       ifAcvPage = false;
       ifRcdPage = true;
+      ifVocPage = false;
+    } else if (document.title == "voice"){
+      ifLgnPage = false;
+      ifAcvPage = false;
+      ifRcdPage = false;
+      ifVocPage = true;
     }
   }
+  if(ifRcdPage){
+    mic = new p5.AudioIn();
+    mic.start();
+  }
+  
   
 }
 
@@ -81,6 +96,12 @@ function draw() {
     circle(-280, height / 2, 900);
     pop();
   } else if (ifRcdPage){
+    vol = mic.getLevel();
+    h = map(vol, 0, 1, height, 0);
+    push();
+    
+    pop();
+  } else if (ifVocPage){
 
   }
   
