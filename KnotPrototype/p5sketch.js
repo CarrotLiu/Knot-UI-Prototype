@@ -29,11 +29,11 @@ let pgNames = [
   "shuang"
 ];
 function preload(){
-  logoEN = loadImage("https://github.com/CarrotLiu/Knot-UI-Prototype/blob/main/KnotPrototype/assets/nbgLogoEN.svg");
-  logoCN = loadImage("./Knot-UI-Prototype/KnotPrototype/assets/logoCN.svg");
-  knot = loadImage("./Knot-UI-Prototype/KnotPrototype/assets/knoted_2.svg");
-  noKnot = loadImage("./Knot-UI-Prototype/KnotPrototype/assets/noKnot_2.svg");
-  halfKnot = loadImage("./Knot-UI-Prototype/KnotPrototype/assets/halfknot_2.svg");
+  logoEN = loadImage("./assets/nbgLogoEN.svg");
+  logoCN = loadImage("./assets/logoCN.svg");
+  knot = loadImage("./assets/knoted_2.svg");
+  noKnot = loadImage("./assets/noKnot_2.svg");
+  halfKnot = loadImage("./assets/halfknot_2.svg");
 
 }
 
