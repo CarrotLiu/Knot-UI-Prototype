@@ -79,7 +79,7 @@ function draw() {
     background("#FAF8ED");
     push();
     translate(windowWidth / 2 + 10, 135);
-    scale(0.2);
+    scale(0.15);
     image(logoEN,0, 0);
     pop();
 
