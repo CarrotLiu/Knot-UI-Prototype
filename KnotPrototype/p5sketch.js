@@ -6,6 +6,9 @@ let ifLgnPage = false,
     ifRcdPage = false;
     ifVocPage = false;
 let acvPageId;
+let strStarth = 250;
+let strIntv;
+
 let pgNames = [
   "lj",
   "lz",
@@ -42,6 +45,7 @@ function setup() {
   cnv.parent("cnv-container");
   cnv.position(0, 0);
   cnv.style("z-index", "-1");
+  strIntv = windowWidth * 0.1;
   for(let i = 0; i < pgNames.length; i ++){
     if(document.title == "Knot Voice"){
       ifLgnPage = true;
@@ -65,7 +69,7 @@ function setup() {
       ifVocPage = true;
     }
   }
-  if(ifRcdPage){
+  if(ifRcdPage || ifVocPage){
     mic = new p5.AudioIn();
     mic.start();
   }
@@ -95,14 +99,29 @@ function draw() {
     fill("#F9B572");
     circle(-280, height / 2, 900);
     pop();
-  } else if (ifRcdPage){
+  } else if (ifRcdPage || ifVocPage){
+    background("#FAF8ED");
     vol = mic.getLevel();
-    h = map(vol, 0, 1, height, 0);
+    h = map(vol, 0, 1, 0, 600);
+    // console.log(h);
     push();
-    
+    noFill();
+    stroke("#748E63");
+    strokeWeight(10);
+    beginShape();
+    vertex(0, strStarth);
+    bezierVertex(strIntv, strStarth, strIntv * 1.1, strStarth - h, strIntv * 1.5, strStarth - h);
+    bezierVertex(strIntv * 1.8, strStarth - h, strIntv * 2.1, strStarth + h * 0.8, strIntv * 2.3, strStarth + h * 0.8);
+    bezierVertex(strIntv * 2.5, strStarth + h * 0.8, strIntv * 2.8, strStarth - h * 0.3, strIntv * 3, strStarth - h * 0.3);
+    bezierVertex(strIntv * 3.2, strStarth - h * 0.3, strIntv * 3.6, strStarth + h * 0.9, strIntv * 4, strStarth + h * 0.9);
+    bezierVertex(strIntv * 4.3, strStarth + h * 0.9, strIntv * 4.6, strStarth - h * 1.2, strIntv * 5, strStarth - h * 1.2);
+    bezierVertex(strIntv * 5.2, strStarth - h * 1.2, strIntv * 5.6, strStarth + h * 0.1, strIntv * 6, strStarth + h * 0.1);
+    bezierVertex(strIntv * 6.3, strStarth + h * 0.1, strIntv * 6.6, strStarth - h * 0.3, strIntv * 6.9, strStarth - h * 0.3);
+    bezierVertex(strIntv * 7.2, strStarth - h * 0.3, strIntv * 7.6, strStarth + h * 0.9, strIntv * 7.9, strStarth + h * 0.9);
+    bezierVertex(strIntv * 8.2, strStarth + h * 0.9, strIntv * 8.6, strStarth - h * 0.1, strIntv * 9, strStarth - h * 0.1);
+    bezierVertex(strIntv * 9.3, strStarth - h * 0.1, strIntv * 9.8, strStarth + h, strIntv * 10, strStarth);
+    endShape();
     pop();
-  } else if (ifVocPage){
-
   }
   
 }
